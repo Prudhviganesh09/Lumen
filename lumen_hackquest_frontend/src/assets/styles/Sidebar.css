@@ -1,0 +1,76 @@
+/* Sidebar styles */
+.sidebar {
+  width: 60px; /* Collapsed width */
+  height: 100vh;
+  background-color: #343a40;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease-in-out; /* Smooth transition */
+  overflow: hidden; /* Prevent overflow */
+  cursor: pointer;
+}
+
+/* Expanded sidebar */
+.sidebar.open {
+  width: 250px; /* Expanded width */
+}
+
+.sidebar.collapsed {
+  width: 0px; /* Collapsed width */
+}
+
+/* Hover effect: Expands when mouse is over collapsed sidebar */
+.sidebar:hover {
+  width: 250px; /* Expanded width */
+}
+
+.sidebar-header {
+  padding: 1rem;
+  background-color: #007bff;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0; /* Hidden in collapsed state */
+}
+
+.sidebar.open .sidebar-header h2 {
+  opacity: 1; /* Show text when expanded */
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar-link:hover {
+  background-color: #495057;
+  color: #007bff;
+}
+
+.sidebar-link span {
+  display: none; /* Hidden when collapsed */
+}
+
+.sidebar.open .sidebar-link span {
+  display: inline; /* Show text when expanded */
+}
